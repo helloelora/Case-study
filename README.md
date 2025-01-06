@@ -1,4 +1,4 @@
-# High-Value Customer Prediction for ShipSmall
+# High-Value customer prediction for ShipSmall
 
 ## Context
 
@@ -6,34 +6,28 @@ ShipSmall specializes in delivering small parcels for e-commerce businesses. The
 
 ## Methodology
 
-### 1. Defining High-Value Customers
+### 1. Defining High-Value customers
 - A customer is considered high-value if:
   - Their customer satisfaction score is 4 or higher.
   - They belong to the top 25% in terms of the number of monthly parcels shipped (75th percentile).
 
-### 2. Data Preparation
-- **Feature Engineering**:
+### 2. Data preparation
+- **Feature engineering**:
   - `Cost_per_Package`: Shipping cost relative to the number of parcels (adjusted to avoid division by zero).
   - `Distance_per_Weight`: Logistic efficiency measured as distance traveled divided by parcel weight.
-- **Categorical Encoding**: Used **OneHotEncoder** for categorical features.
-- **Handling Class Imbalance**: Applied **SMOTE** to address the imbalance between high-value and non-high-value customers.
+- **Categorical encoding**: Used **OneHotEncoder** for categorical features.
+- **Handling class imbalance**: Applied **SMOTE** to address the imbalance between high-value and non-high-value customers.
 
-### 3. Models Tested
+### 3. Models tested
 - **Logistic Regression**: Used as a baseline but produced unsatisfactory results
 - **Random Forest**: Achieved better performance but lacked interpretability
 - **Decision Tree Classifier**: Selected for its simplicity and ability to provide interpretable insights. Used graphviz for an interpretable result
 
-### 4. Performance Evaluation
+### 4. Performance evaluation
 - **Recall** prioritized to maximize identification of high-value customers.
-- **5-fold Cross-Validation** used to ensure consistent performance and prevent overfitting.
+- **5-fold cross-validation** used to ensure consistent performance and prevent overfitting.
 
 ## Results
-
-### Random Forest Classifier
-- **Recall**: 78%
-- **Precision**: 42%
-- This model successfully identified most high-value clients, despite moderate precision.
-
 ### Decision Tree Classifier
 - The model highlighted clear patterns for identifying high-value customers with low Gini impurity at key decision nodes.
 - **Recall**: 95%
@@ -56,13 +50,13 @@ ShipSmall specializes in delivering small parcels for e-commerce businesses. The
 
 ## Insights and Recommendations
 
-1. **Acquire Business Accounts**:
+1. **Acquire business accounts**:
    - Offer volume-based discounts or enhanced customer support to attract businesses.
-2. **Optimize Shipping Costs**:
+2. **Optimize shipping costs**:
    - Highlight competitive costs while maintaining service quality.
-3. **Demographic Targeting**:
+3. **Demographic targeting**:
    - Focus on digital campaigns targeting younger adults (20–30 years old).
-4. **Regional Campaigns**:
+4. **Regional campaigns**:
    - Target regions where customers primarily ship within shorter distances.
 
 ## Visualizations
